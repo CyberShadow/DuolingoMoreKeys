@@ -11,7 +11,7 @@
 
 (function () {
   // Configuration
-  var keys = '1234567890abcdefghijklmnopqrstuvwxyz';
+  var keys = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // React/Duolingo obfuscated class names
   var classNameButton = 'iNLw3';    // Button representing a word or letter
@@ -148,7 +148,7 @@
   // Key event handler
   document.addEventListener('keydown', function(event) {
     try {
-      var c = event.key.toLowerCase();
+      var c = event.key.toUpperCase();
       if (c in currentButtons) {
         //log('Dispatching!');
         currentButtons[c].click();
