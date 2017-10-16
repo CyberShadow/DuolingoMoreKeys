@@ -14,8 +14,9 @@
   var keys = '1234567890abcdefghijklmnopqrstuvwxyz';
 
   // React/Duolingo obfuscated class names
-  var classNameButton = 'iNLw3';
-  var classNameDisabled = 'MJuj8';
+  var classNameButton = 'iNLw3';    // Button representing a word or letter
+  var classNameDisabled = 'MJuj8';  // Additional button class for used words
+  var classNameExercise = '_1Y5M_'; // Div enclosing all controls of an exercise
 
   // React reimplements console.log, so save a
   // private reference to the original on load
@@ -69,6 +70,9 @@
 
   function checkDom() {
     try {
+      if (document.getElementsByClassName(classNameExercise).length != 1)
+        return; // No exercise active (<1), or during transition animation between two exercises (>1)
+
       var buttons = document.getElementsByClassName(classNameButton);
       //log('Found ' + buttons.length + ' buttons');
 
