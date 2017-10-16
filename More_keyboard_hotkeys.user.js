@@ -59,7 +59,8 @@
       '  padding: 2px;'+
       '}' +
       '' +
-      '.'+classNameDisabled+' .key-hint {' +
+      '.'+classNameDisabled+' .key-hint,'+
+      'button:disabled .key-hint {' +
       '  display: none;' +
       '}'
     );
