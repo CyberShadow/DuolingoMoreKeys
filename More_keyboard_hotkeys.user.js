@@ -2,6 +2,7 @@
 // @name        More Duolingo keyboard hotkeys
 // @description Makes all Duolingo exercises accessible with the keyboard
 // @namespace   thecybershadow.net
+// @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
 // @version     1
 // @grant       none
