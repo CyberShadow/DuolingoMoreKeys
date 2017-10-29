@@ -4,7 +4,7 @@
 // @namespace   thecybershadow.net
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
-// @version     1
+// @version     2
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
@@ -161,6 +161,11 @@
     }
     return true;
   });
+
+  // Make keys customizable
+  if ('localStorage' in window && 'duolingoMoreKeysLayout' in window.localStorage) {
+    keys = window.localStorage.duolingoMoreKeysLayout;
+  }
 
   setInterval(checkDom, 100);
   log('"More Duolingo keyboard hotkeys" loaded');
