@@ -22,11 +22,15 @@ You can change the keys used to select answer choices using the following steps:
 3. Open the "Console" tab in the developer console (or your web browser's equivalent)
 4. At the prompt at the bottom, type:
 
-        window.localStorage.duolingoMoreKeysLayout = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   ```javascript
+   window.localStorage.duolingoMoreKeysLayout = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   ```
 
    Change the list of keys between the quotes to your desired digits or letters. Letters should be in UPPER CASE. The keys will be used in the order specified.
 5. Close the developer console by pressing F12.
 
 To reset the keys to the default value, do the same steps above, but at step 4, enter instead:
 
-    delete window.localStorage.duolingoMoreKeysLayout;
+```javascript
+delete window.localStorage.duolingoMoreKeysLayout;
+```
