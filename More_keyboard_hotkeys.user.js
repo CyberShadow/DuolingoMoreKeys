@@ -4,7 +4,7 @@
 // @namespace   thecybershadow.net
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
-// @version     2
+// @version     3
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
@@ -15,7 +15,7 @@
 
   // React/Duolingo obfuscated class names
   var classNameButton = 'iNLw3';    // Button representing a word or letter
-  var classNameDisabled = 'MJuj8';  // Additional button class for used words
+  var classNameDisabled = 'jkMDT';  // Additional button class for used words
   var classNameExercise = '_1Y5M_'; // Div enclosing all controls of an exercise
 
   // React reimplements console.log, so save a
