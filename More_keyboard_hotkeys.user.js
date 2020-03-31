@@ -14,10 +14,10 @@
   var keys = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // React/Duolingo obfuscated class names
-  var classNameButton1  = 'iNLw3' ; // Button representing a word or letter ("match the pairs")
-  var classNameButton2  = '_7KFtz'; // Button representing a word or letter (word bank)
-  var classNameDisabled = '_2dKiU'; // Additional button class for used words
-  var classNameExercise = '_1Y5M_'; // Div enclosing all controls of an exercise
+  var classNameButton1  = '_1HcF0' ; // Button representing a word or letter ("match the pairs")
+  var classNameButton2  = 'ZN0_O'; // Button representing a word or letter (word bank)
+  var classNameDisabled = '_2OVuy'; // Additional button class for used words
+  var classNameExercise = '_3Mkmw'; // Div enclosing all controls of an exercise
 
   // React reimplements console.log, so save a
   // private reference to the original on load
