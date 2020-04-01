@@ -4,7 +4,7 @@
 // @namespace   thecybershadow.net
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
-// @version     4
+// @version     5
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
