@@ -4,7 +4,7 @@
 // @namespace   thecybershadow.net
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
-// @version     5
+// @version     6
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
@@ -14,8 +14,7 @@
   var keys = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // React/Duolingo obfuscated class names
-  var classNameButton1  = '_1HcF0' ; // Button representing a word or letter ("match the pairs")
-  var classNameButton2  = 'ZN0_O'; // Button representing a word or letter (word bank)
+  var classNameButton   = '_1HcF0'; // Button representing a word or letter
   var classNameDisabled = '_2OVuy'; // Additional button class for used words
   var classNameExercise = '_3Mkmw'; // Div enclosing all controls of an exercise
 
@@ -77,11 +76,8 @@
       if (document.getElementsByClassName(classNameExercise).length != 1)
         return; // No exercise active (<1), or during transition animation between two exercises (>1)
 
-      var buttons1 = document.getElementsByClassName(classNameButton1);
-      var buttons2 = document.getElementsByClassName(classNameButton2);
-      buttons1 = Array.prototype.slice.call(buttons1);
-      buttons2 = Array.prototype.slice.call(buttons2);
-      var buttons = buttons1.concat(buttons2);
+      var buttons = document.getElementsByClassName(classNameButton);
+      buttons = Array.prototype.slice.call(buttons);
       //log('Found ' + buttons.length + ' buttons');
 
       if (!document.querySelector('div.key-hint')) {
