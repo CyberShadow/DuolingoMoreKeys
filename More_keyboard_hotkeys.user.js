@@ -5,7 +5,7 @@
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
 // @include     https://preview.duolingo.com/*
-// @version     7
+// @version     8
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
@@ -15,9 +15,9 @@
   var keys = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // React/Duolingo obfuscated class names
-  var classNameButton   = '_1HcF0'; // Button representing a word or letter
-  var classNameDisabled = '_2OVuy'; // Additional button class for used words
-  var classNameExercise = '_3Mkmw'; // Div enclosing all controls of an exercise
+  var classNameButton   = '_1O290'; // Button representing a word or letter
+  var classNameDisabled = '_2UUiS'; // Additional button class for used words
+  var classNameExercise = '_32AJE'; // Div enclosing all controls of an exercise
 
   // React reimplements console.log, so save a
   // private reference to the original on load
