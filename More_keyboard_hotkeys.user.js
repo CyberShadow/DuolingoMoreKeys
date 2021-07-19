@@ -5,7 +5,7 @@
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
 // @include     https://preview.duolingo.com/*
-// @version     8
+// @version     9
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
@@ -16,7 +16,7 @@
 
   // React/Duolingo obfuscated class names
   var classNameButton   = '_1O290'; // Button representing a word or letter
-  var classNameDisabled = '_2UUiS'; // Additional button class for used words
+  var classNameDisabled = '_2mDNn'; // Additional button class for used words
   var classNameExercise = '_32AJE'; // Div enclosing all controls of an exercise
 
   // React reimplements console.log, so save a
@@ -42,8 +42,8 @@
     addGlobalStyle(
       '.key-hint { '+
       '  position: absolute;'+
-      '  margin-left: -25px;'+
-      '  margin-top: -20px;'+
+      '  left: -10px;'+
+      '  top: -10px;'+
 
     //'  color: #777;'+
     //'  background-color: #fff;'+
