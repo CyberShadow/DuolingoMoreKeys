@@ -152,19 +152,28 @@
   // Key event handler
   document.addEventListener('keydown', function(event) {
     try {
-      var c = event.key.toUpperCase();
-      if (c in currentButtons) {
-        //log('Dispatching!');
-        currentButtons[c].click();
-        checkDom();
-        return false;
+      var passThrough = (function() {
+        var c = event.key.toUpperCase();
+        if (c in currentButtons) {
+          //log('Dispatching!');
+          currentButtons[c].click();
+          checkDom();
+          return false;
+        }
+        return true;
+      })();
+      if (!passThrough) {
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        event.preventDefault();
       }
+      return passThrough;
     }
     catch (e) {
       log(e);
     }
     return true;
-  });
+  }, true);
 
   // Make keys customizable
   if ('localStorage' in window && 'duolingoMoreKeysLayout' in window.localStorage) {
