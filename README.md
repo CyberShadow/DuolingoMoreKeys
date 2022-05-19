@@ -7,6 +7,13 @@ This UserScript allows doing all exercises exclusively with the keyboard (withou
 1. Install [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) for Firefox or [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) for Chrome.
 2. [Click here](https://github.com/CyberShadow/DuolingoMoreKeys/raw/master/More_keyboard_hotkeys.user.js) to install this UserScript.
 
+## Usage
+
+You can press the indicated keys to activate buttons as if clicking them.
+
+You can also press Ctrl+Space to play the audio again, or press Ctrl+Shift+Space to play the slow version.
+(These hotkeys were standard in Duolingo, but they're no longer available in all exercises.)
+
 ## Screenshots
 
 ![](screenshot-matchpairs.png)

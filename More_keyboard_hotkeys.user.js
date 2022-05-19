@@ -5,14 +5,16 @@
 // @author      Vladimir Panteleev <https://thecybershadow.net/>
 // @include     https://www.duolingo.com/*
 // @include     https://preview.duolingo.com/*
-// @version     9
+// @version     10
 // @grant       none
 // @run-at      document-start
 // ==/UserScript==
 
 (function () {
   // Configuration
-  var keys = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var keys = window.localStorage.duolingoMoreKeysLayout || '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var listenKey = window.localStorage.duolingoMoreKeysListenKey || JSON.stringify([' ', false, true, false, false]);
+  var listenSlowlyKey = window.localStorage.duolingoMoreKeysListenSlowlyKey || JSON.stringify([' ', true, true, false, false]);
 
   // React/Duolingo obfuscated class names
   var classNameButton   = '_1O290'; // Button representing a word or letter
@@ -162,7 +164,8 @@
           return false;
         }
         // Ctrl+Space: listen
-        if (c == ' ' && !event.shiftKey && event.ctrlKey && !event.metaKey && !event.altKey) {
+        var keyJSON = JSON.stringify([c, event.shiftKey, event.ctrlKey, event.metaKey, event.altKey]);
+        if (keyJSON == listenKey) {
           let listenButtons = document.getElementsByClassName(classNameListen);
           if (listenButtons.length) {
             listenButtons[0].click();
@@ -170,7 +173,7 @@
           }
         }
         // Ctrl+Shift+Space: listen slowly
-        if (c == ' ' && event.shiftKey && event.ctrlKey && !event.metaKey && !event.altKey) {
+        if (keyJSON == listenSlowlyKey) {
           let listenButtons = document.getElementsByClassName(classNameListen);
           if (listenButtons.length) {
             listenButtons[listenButtons.length-1].click();
@@ -191,11 +194,6 @@
     }
     return true;
   }, true);
-
-  // Make keys customizable
-  if ('localStorage' in window && 'duolingoMoreKeysLayout' in window.localStorage) {
-    keys = window.localStorage.duolingoMoreKeysLayout;
-  }
 
   setInterval(checkDom, 100);
   log('"More Duolingo keyboard hotkeys" loaded');
