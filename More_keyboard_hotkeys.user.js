@@ -154,7 +154,7 @@
     try {
       var passThrough = (function() {
         var c = event.key.toUpperCase();
-        if (c in currentButtons) {
+        if (c in currentButtons && !event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey) {
           //log('Dispatching!');
           currentButtons[c].click();
           checkDom();
