@@ -18,6 +18,7 @@
   var classNameButton   = '_1O290'; // Button representing a word or letter
   var classNameDisabled = '_2mDNn'; // Additional button class for used words
   var classNameExercise = '_32AJE'; // Div enclosing all controls of an exercise
+  var classNameListen   = '_1x6bc'; // Button which replays the exercise's audio
 
   // React reimplements console.log, so save a
   // private reference to the original on load
@@ -159,6 +160,22 @@
           currentButtons[c].click();
           checkDom();
           return false;
+        }
+        // Ctrl+Space: listen
+        if (c == ' ' && !event.shiftKey && event.ctrlKey && !event.metaKey && !event.altKey) {
+          let listenButtons = document.getElementsByClassName(classNameListen);
+          if (listenButtons.length) {
+            listenButtons[0].click();
+            return false;
+          }
+        }
+        // Ctrl+Shift+Space: listen slowly
+        if (c == ' ' && event.shiftKey && event.ctrlKey && !event.metaKey && !event.altKey) {
+          let listenButtons = document.getElementsByClassName(classNameListen);
+          if (listenButtons.length) {
+            listenButtons[listenButtons.length-1].click();
+            return false;
+          }
         }
         return true;
       })();
